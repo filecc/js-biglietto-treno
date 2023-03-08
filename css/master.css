@@ -1,0 +1,13 @@
+body{
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    min-height: 100vh;
+    width: 100%;
+   
+}
+
+
