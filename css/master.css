@@ -39,12 +39,17 @@ main{
 }
 
 .line{
-    padding: 1px;
-    border-bottom: 1px dashed black;
+    padding: 2px;
+    background-color: #2c2a2c;
+    background: repeating-linear-gradient(
+  to right,
+  transparent,
+  #2c2a2c,
+  transparent);
     position: absolute;
-    top: 52%;
+    top: 51.5%;
     left: 0;
-    
+    z-index: 0;
 }
 
 #ticketNumber{
