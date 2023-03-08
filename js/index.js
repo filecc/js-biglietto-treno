@@ -48,27 +48,29 @@ if (
     `;
   document.getElementById("data").innerHTML = `
     <p class="text-center text-danger fw-bold">Errore</p>`;
-} else if (age > 18 && age < 65) {
-  document.getElementById("cost").innerHTML = `
-            <p class="p-3 m-0 text-success fw-bold h1">  
-            ${price}€
-            </p>
-    `;
-  document.getElementById("data").innerHTML = dataToShow;
-} else if (age <= 18 && age > 12) {
-  finalPrice = (price - price * under18Discont).toFixed(2);
-  document.getElementById("cost").innerHTML = `
-<p class="p-3 m-0 text-success fw-bold h1">  
-${finalPrice}€
-</p>
-`;
-  document.getElementById("data").innerHTML = dataToShow;
-} else if (age >= 65 && age < 130) {
-  finalPrice = (price - price * overDiscount).toFixed(2);
-  document.getElementById("cost").innerHTML = `
-<p class="p-3 m-0 text-success fw-bold h1">  
-${finalPrice}€
-</p>
-`;
-  document.getElementById("data").innerHTML = dataToShow;
+} else {
+    if (age > 18 && age < 65) {
+        document.getElementById("cost").innerHTML = `
+                  <p class="p-3 m-0 text-success fw-bold h1">  
+                  ${price}€
+                  </p>
+          `;
+        document.getElementById("data").innerHTML = dataToShow;
+      } else if (age <= 18 && age > 12) {
+        finalPrice = (price - price * under18Discont).toFixed(2);
+        document.getElementById("cost").innerHTML = `
+      <p class="p-3 m-0 text-success fw-bold h1">  
+      ${finalPrice}€
+      </p>
+      `;
+        document.getElementById("data").innerHTML = dataToShow;
+      } else if (age >= 65 && age < 130) {
+        finalPrice = (price - price * overDiscount).toFixed(2);
+        document.getElementById("cost").innerHTML = `
+      <p class="p-3 m-0 text-success fw-bold h1">  
+      ${finalPrice}€
+      </p>
+      `;
+        document.getElementById("data").innerHTML = dataToShow;
+      }
 }
