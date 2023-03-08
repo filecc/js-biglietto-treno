@@ -37,6 +37,7 @@ const dataToShow = (document.getElementById("data").innerHTML = `
 if (
   isNaN(age) ||
   parseInt(age) < 12 ||
+  parseInt(age) > 130 ||
   isNaN(kmToDo) ||
   parseInt(kmToDo) <= 0
 ) {
