@@ -26,11 +26,23 @@ let price = (euroKm * kmToDo).toFixed(2);
 // dichiariamo la variabile per il prezzo scontato
 let finalPrice = 0;
 
+const randomLetter = ['a', 'b', 'c', 'd', 'e', 'k'];
+
+const randomTicket = `
+${randomLetter[Math.floor((Math.random() * 5))]}${randomLetter[Math.floor((Math.random() * 5))]}${Math.floor((Math.random() * 10)+1)}${Math.floor((Math.random() * 10)+1)}${Math.floor((Math.random() * 10)+1)}${Math.floor((Math.random() * 10)+1)}${randomLetter[Math.floor((Math.random() * 5))]}${randomLetter[Math.floor((Math.random() * 5))]}
+`
+
 // variabile per indicare se mostrare i dati o no
 const dataToShow = (document.getElementById("data").innerHTML = `
-            <ul class='list-unstyled'>
-                <li>Et&agrave;: ${age}</li>
-                <li>Km da percorrere: ${kmToDo}</li>
+            <ul class='list-unstyled d-flex justify-content-between align-items-center text-start'>
+                <li>
+                <div class='fw-bold'>AGE</div>
+                <div>${age}</div>
+                </li>
+                <li>
+                <div class='fw-bold'>KM</div>
+                <div>${kmToDo}</div>
+                </li>
             </ul>
 `);
 
@@ -43,15 +55,16 @@ if (
 ) {
   document.getElementById("cost").innerHTML = `
             <p class="p-3 m-0 text-danger fw-bold">  
-            I dati inseriti non sono corretti: riprova.
+            Oops!
             </p>
     `;
   document.getElementById("data").innerHTML = `
-    <p class="text-center text-danger fw-bold">Errore</p>`;
+    <p class="text-center text-danger fw-bold">Riprova.</p>`;
 } else {
+  document.getElementById('ticketNumber').innerHTML = randomTicket;
     if (age > 18 && age < 65) {
         document.getElementById("cost").innerHTML = `
-                  <p class="p-3 m-0 text-success fw-bold h1">  
+                  <p class="p-3 m-0 text-white fw-bold">  
                   ${price}€
                   </p>
           `;
@@ -59,7 +72,7 @@ if (
       } else if (age <= 18 && age > 12) {
         finalPrice = (price - price * under18Discont).toFixed(2);
         document.getElementById("cost").innerHTML = `
-      <p class="p-3 m-0 text-success fw-bold h1">  
+      <p class="p-3 m-0 text-white fw-bold">  
       ${finalPrice}€
       </p>
       `;
@@ -67,7 +80,7 @@ if (
       } else if (age >= 65 && age < 130) {
         finalPrice = (price - price * overDiscount).toFixed(2);
         document.getElementById("cost").innerHTML = `
-      <p class="p-3 m-0 text-success fw-bold h1">  
+      <p class="p-3 m-0 text-white fw-bold">  
       ${finalPrice}€
       </p>
       `;

@@ -6,37 +6,41 @@
     <title>Calcolatore di prezzi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/master.css">
   </head>
   <body class="bg-dark text-white">
-    <main class="container w-100 h-100 d-flex justify-content-center align-items-center px-4">
-        <div class="card row bg-body-tertiary text-dark rounded shadow-sm pb-4">
-            <div class="card-header col-12 text-center d-flex  flex-column justify-content-center align-items-center">
-                <h1 class="fs-3">Calcolatore di prezzo</h1>
-                <p>Scopri qui quanto costa utilizzare i nostri treni.</p>
-            </div>
-            <div class="card-body">
-                <div class="col-12 text-center pt-3">
-                    <small class="fw-bold text-success">Novit&agrave;<span class="text-dark"> - Sconto minorenni</span>  <span class="badge bg-success placeholder-wave">-20%</span></small> <br>
-                    <small class="fw-bold text-success">Novit&agrave;<span class="text-dark"> - Sconto over 65</span> <span class="badge bg-success placeholder-wave">-40%</span></small>
+    <main class="container w-100 h-100 d-flex justify-content-center align-items-center px-5">
+        <div class="ticket card row text-dark rounded p-4 position-relative">
+            
+            <div class="col-12 text-center d-flex  flex-column justify-content-center align-items-center mt-5">
+                <div class="text-center">
+                    <img class="img-fluid w-75" src="./images/logo.svg-4242507659" alt="logo">
+                    <h1 class="fs-6 pt-2">your ticket </h1>
                 </div>
-                <div class="col-12 text-center mt-4">
-                    <p>I dati che hai inserito:</p>
-                    <div class="py-3 border-1 border-dark border d-flex justify-content-center align-items-center shadow bg-body-tertiary rounded position-relative">
-                        <div id="data" class="text-center">
-                          
-                        </div>
-                    </div>
+                
+                <small id="ticketNumber"></small>
+                
+            </div>
+            <div>
+                
+                <div class="col-12 text-center mt-5 pt-4">
+                    <div id="cost" class="py-3 d-flex justify-content-center align-items-center position-relative"></div>
+                    <div id="data" class="text-center"></div>
+                    
                 </div>
     
                 <div class="col-12 text-center mt-4">
-                    <p>Il costo del tuo biglietto è:</p>
-                    <div id="cost" class="py-3 border-1 border-dark border d-flex justify-content-center align-items-center shadow bg-body-secondary rounded position-relative">
-                     
-                    </div>
+                   
+                    
                 </div>
             </div>
             
+            <div class="bite-left bg-dark"></div>
+            <div class="bite-right bg-dark"></div>
+            <div class="line"></div>
             
         </div>
     </main>
